@@ -10,6 +10,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ActivitiyHub.Infrastructure\ActivitiyHub.Infrastructure.csproj" />
+    <ProjectReference Include="..\ActivityHub.Application\ActivityHub.Application.csproj" />
+    <ProjectReference Include="..\ActivityHub.Domain\ActivityHub.Domain.csproj" />
   </ItemGroup>
 
 </Project>
