@@ -1,18 +1,24 @@
 ﻿using ActivityHub.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace ActivitiyHub.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+        //public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        //    : base(options)
+        //{
+        //}
 
         public DbSet<User> Users { get; set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<UserActivity> UserActivities { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=ActivityHubDb;User Id=postgres;Password=mysecretpassword;");
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,3 +40,4 @@ namespace ActivitiyHub.Infrastructure.Data
         }
     }
 }
+
