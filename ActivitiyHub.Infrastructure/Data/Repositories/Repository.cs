@@ -20,34 +20,54 @@ namespace ActivitiyHub.Infrastructure.Data.Repositories
             _dbSet = _context.Set<TEntity>();
         }
 
-        public async Task<TEntity> GetByIdAsync(Guid id)
+        public void Add(TEntity entity)
         {
-            return await _dbSet.FindAsync(id);
+            throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public Task AddAsync(TEntity entity)
         {
-            return await _dbSet.ToListAsync();
+            throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate)
+        public void Delete(Guid id)
         {
-            return await _dbSet.Where(predicate).ToListAsync();
+            throw new NotImplementedException();
         }
 
-        public async Task AddAsync(TEntity entity)
+        public Task DeleteAsync(Guid id)
         {
-            await _dbSet.AddAsync(entity);
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<TEntity> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public TEntity GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity> GetByIdAsync(Guid id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(TEntity entity)
         {
-            _dbSet.Update(entity);
+            throw new NotImplementedException();
         }
 
-        public void Remove(TEntity entity)
+        public Task UpdateAsync(TEntity entity)
         {
-            _dbSet.Remove(entity);
+            throw new NotImplementedException();
         }
     }
 }
