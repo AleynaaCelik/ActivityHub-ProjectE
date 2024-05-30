@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityHub.Domain", "ActivityHub.Domain\ActivityHub.Domain.csproj", "{558C7E88-237C-4275-A202-DF5E4529D5C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivityHub.Domain", "ActivityHub.Domain\ActivityHub.Domain.csproj", "{558C7E88-237C-4275-A202-DF5E4529D5C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityHub.Application", "ActivityHub.Application\ActivityHub.Application.csproj", "{F0EBD82D-C96F-405A-A2B8-9B30F76F5B8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivityHub.Application", "ActivityHub.Application\ActivityHub.Application.csproj", "{F0EBD82D-C96F-405A-A2B8-9B30F76F5B8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivitiyHub.Infrastructure", "ActivitiyHub.Infrastructure\ActivitiyHub.Infrastructure.csproj", "{7C100FA5-49D8-4164-8EBF-7337458A4192}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivitiyHub.Infrastructure", "ActivitiyHub.Infrastructure\ActivitiyHub.Infrastructure.csproj", "{7C100FA5-49D8-4164-8EBF-7337458A4192}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityHub.Presantaion", "ActivityHub.Presantaion\ActivityHub.Presantaion.csproj", "{5D49177F-B521-45E0-991E-614ABD454BB4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityHub.Persistance", "ActivityHub.Persistance\ActivityHub.Persistance.csproj", "{C694FE9A-BCC7-43A4-8BAC-3953197528BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivityHub.Presantaion", "ActivityHub.Presantaion\ActivityHub.Presantaion.csproj", "{5D49177F-B521-45E0-991E-614ABD454BB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{5D49177F-B521-45E0-991E-614ABD454BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D49177F-B521-45E0-991E-614ABD454BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D49177F-B521-45E0-991E-614ABD454BB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C694FE9A-BCC7-43A4-8BAC-3953197528BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C694FE9A-BCC7-43A4-8BAC-3953197528BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C694FE9A-BCC7-43A4-8BAC-3953197528BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C694FE9A-BCC7-43A4-8BAC-3953197528BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
