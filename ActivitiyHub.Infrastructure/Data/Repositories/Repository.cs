@@ -1,4 +1,5 @@
-﻿using ActivityHub.Domain.Interfaces;
+﻿using ActivityHub.Domain.Entities;
+using ActivityHub.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace ActivitiyHub.Infrastructure.Data.Repositories
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : EntityBase
+
     {
         protected readonly ApplicationDbContext _context;
         private readonly DbSet<TEntity> _dbSet;

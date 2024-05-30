@@ -10,6 +10,8 @@ namespace ActivityHub.Domain.Entities
         public string Description { get; set; }
         public Guid UserId { get; set; }
         public User User { get; set; }
+
+        // Navigation property
+        public ICollection<UserActivity> UserActivities { get; set; }
     }
 }
-

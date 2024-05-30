@@ -1,9 +1,10 @@
 using ActivitiyHub.Infrastructure;
+using ActivitiyHub.Infrastructure.Data;
+using ActivitiyHub.Infrastructure.Data.Repositories;
 using ActivityHub.Application.Interfaces;
 using ActivityHub.Application.Services;
 using ActivityHub.Domain.Interfaces;
-using ActivityHub.Infrastructure;
-using ActivityHub.Infrastructure.Repositories;
+
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
@@ -14,6 +15,9 @@ builder.Services.AddControllersWithViews();
 
 // Register DbContext
 builder.Services.AddDbContext<ActivityHubDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Register repositories
