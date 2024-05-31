@@ -24,52 +24,68 @@ namespace ActivitiyHub.Infrastructure.Data.Repositories
 
         public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Add(entity);
+            _context.SaveChanges();
         }
 
-        public Task AddAsync(TEntity entity)
+        public async Task AddAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            await _dbSet.AddAsync(entity);
+            await _context.SaveChangesAsync();
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = _dbSet.Find(id);
+            if (entity == null)
+            {
+                throw new ArgumentException("Entity not found");
+            }
+            _dbSet.Remove(entity);
+            _context.SaveChanges();
         }
 
-        public Task DeleteAsync(Guid id)
+        public async  Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = await _dbSet.FindAsync(id);
+            if (entity == null)
+            {
+                throw new ArgumentException("Entity not found");
+            }
+            _dbSet.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return _dbSet.ToList();
         }
 
-        public Task<IEnumerable<TEntity>> GetAllAsync()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _dbSet.ToListAsync();
         }
 
         public TEntity GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _dbSet.Find(id);
         }
 
-        public Task<TEntity> GetByIdAsync(Guid id)
+        public async Task<TEntity> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _dbSet.FindAsync(id);
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Update(entity);
+            _context.SaveChanges();
         }
 
-        public Task UpdateAsync(TEntity entity)
+        public async  Task UpdateAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

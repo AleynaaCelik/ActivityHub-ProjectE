@@ -1,10 +1,11 @@
 ﻿using ActivityHub.Application.DTOs;
 using ActivityHub.Application.Interfaces;
+using ActivityHub.Presantaion.Models;
 using Microsoft.AspNetCore.Mvc;
+//using OpenAI_API;  // OpenAI API kütüphanesini ekleyin
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ActivityHub.Presantaion.Models;
 
 namespace ActivityHub.Presantaion.Controllers
 {
@@ -20,48 +21,46 @@ namespace ActivityHub.Presantaion.Controllers
         // GET: /Activity
         public async Task<IActionResult> Index()
         {
-            IEnumerable<ActivityDto> activities = await _activityService.GetAllActivitiesAsync();
-            return View(activities);
+            return View(new CreateActivityViewModel());
         }
-
-        // GET: /Activity/Details/{id}
-        public async Task<IActionResult> Details(Guid id)
-        {
-            ActivityDto activity = await _activityService.GetActivityByIdAsync(id);
-            if (activity == null)
-            {
-                return NotFound();
-            }
-            return View(activity);
-        }
-
-        // GET: /Activity/Create
         public IActionResult Create()
         {
-            return View();
+            return RedirectToAction("Index");
         }
+        //// POST: /Activity/GetRecommendations
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> GetRecommendations(CreateActivityViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        // OpenAI API çağrısı için gerekli kodlar
+        //        var apiKey = "YOUR_OPENAI_API_KEY";  // OpenAI API anahtarınızı burada belirtin
+        //        var openai = new OpenAIAPI(apiKey);
 
-        // POST: /Activity/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CreateActivityViewModel createActivityViewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                var createActivityDto = new CreateActivityDto
-                {
-                    Name = createActivityViewModel.Name,
-                    Type = createActivityViewModel.Type,
-                    Date = createActivityViewModel.Date,
-                    Description = createActivityViewModel.Description,
-                    UserId = createActivityViewModel.UserId
-                };
+        //        // Kullanıcı tercihlerini OpenAI'ye uygun bir şekilde formatlayın
+        //        var prompt = $"User prefers {model.OutdoorOrIndoor} activities, is interested in {string.Join(", ", model.Interests)}, and prefers {model.CrowdPreference} places. Suggest suitable activities.";
 
-                await _activityService.AddActivityAsync(createActivityDto);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(createActivityViewModel);
-        }
+        //        var completionRequest = new OpenAI_API.Completions.CompletionRequest()
+        //        {
+        //            Prompt = prompt,
+        //            Model = "text-davinci-003",
+        //            MaxTokens = 150
+        //        };
+
+        //        var completionResult = await openai.Completions.CreateCompletionAsync(completionRequest);
+
+        //        var recommendations = new List<string>();
+        //        if (completionResult.Completions != null && completionResult.Completions.Count > 0)
+        //        {
+        //            recommendations.Add(completionResult.Completions[0].Text.Trim());
+        //        }
+
+        //        return View("Recommendations", recommendations);
+        //    }
+
+        //    return View("Index", model);
+        //}
 
         // Diğer işlemler için gerekli action metotlarını da ekleyebilirsiniz.
     }

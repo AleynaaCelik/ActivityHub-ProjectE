@@ -7,36 +7,61 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ActivityHub.Presantaion.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #E0FBE2;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         header {
-            background-color: #ffffff;
+            background-color: #B0EBB4;
+            color: #343a40;
         }
 
         .navbar {
-            background-color: #ffffff;
+            background-color: #B0EBB4;
         }
 
         .navbar-brand, .nav-link {
             color: #343a40 !important;
         }
 
+            .navbar-brand:hover, .nav-link:hover {
+                color: #ACE1AF !important;
+            }
+
         .footer {
-            background-color: #ffffff;
-            color: #6c757d;
+            background-color: #B0EBB4;
+            color: #343a40;
         }
 
             .footer a {
-                color: #6c757d;
+                color: #ACE1AF;
+            }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: #ACE1AF;
+            border-color: #ACE1AF;
+            color: #343a40;
+        }
+
+            .btn-primary:hover {
+                background-color: #BFF6C3;
+                border-color: #BFF6C3;
             }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ActivityHub.Presantaion</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"

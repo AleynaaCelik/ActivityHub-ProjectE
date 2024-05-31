@@ -1,0 +1,64 @@
+﻿<h2>Etkinlik Seçimi</h2>
+
+<form asp-action="GetRecommendations" method="post" class="needs-validation">
+    <div class="mb-3">
+        <label for="outdoorOrIndoor" class="form-label">Açık hava mı kapalı hava mı tercih edersiniz?</label>
+        <select id="outdoorOrIndoor" name="OutdoorOrIndoor" class="form-select" required>
+            <option value="">Seçiniz...</option>
+            <option value="Açık Hava">Açık Hava</option>
+            <option value="Kapalı Hava">Kapalı Hava</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="activityType" class="form-label">Hareketli mi hareketsiz mi etkinlikleri tercih edersiniz?</label>
+        <select id="activityType" name="ActivityType" class="form-select" required>
+            <option value="">Seçiniz...</option>
+            <option value="Hareketli">Hareketli</option>
+            <option value="Hareketsiz">Hareketsiz</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="interests" class="form-label">İlgi alanlarınız neler? (Birden fazla seçebilirsiniz)</label>
+        <select id="interests" name="Interests" class="form-select" multiple required>
+            <option value="Okuma">Okuma</option>
+            <option value="Müzik Dinleme">Müzik Dinleme</option>
+            <option value="Yürüyüş">Yürüyüş</option>
+            <option value="Spor">Spor</option>
+            <option value="Oyun">Oyun</option>
+            <option value="Yemek">Yemek</option>
+            <!-- Gerektiğinde daha fazla ilgi alanı ekleyin -->
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="timePreference" class="form-label">Etkinlik yapmayı tercih ettiğiniz zaman dilimi nedir?</label>
+        <select id="timePreference" name="TimePreference" class="form-select" required>
+            <option value="">Seçiniz...</option>
+            <option value="Hafta İçi">Hafta İçi</option>
+            <option value="Hafta Sonu">Hafta Sonu</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="groupSize" class="form-label">Etkinlikleri tek başınıza mı yoksa grup halinde mi yapmayı tercih edersiniz?</label>
+        <select id="groupSize" name="GroupSize" class="form-select" required>
+            <option value="">Seçiniz...</option>
+            <option value="Tek Başına">Tek Başına</option>
+            <option value="Grup Halinde">Grup Halinde</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="mood" class="form-label">İçinde bulunduğunuz ruh haline en uygun etkinlik türleri nelerdir? (Birden fazla seçebilirsiniz)</label>
+        <select id="mood" name="Mood" class="form-select" multiple required>
+            <option value="Stres Atma">Stres Atma</option>
+            <option value="Sakinleştirme">Sakinleştirme</option>
+            <option value="Neşelendirme">Neşelendirme</option>
+            <!-- Gerektiğinde daha fazla ruh hali ekleyin -->
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Önerileri Al</button>
+</form>

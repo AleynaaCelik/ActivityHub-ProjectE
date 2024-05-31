@@ -1,0 +1,17 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Recommendations";
+}
+
+<h2>Recommended Activities</h2>
+
+<ul>
+    @foreach (var recommendation in Model)
+    {
+        <li>@recommendation</li>
+    }
+</ul>
+
+<a href="@Url.Action("Index", "Activity")" class="btn btn-primary">Back to Selection</a>
+
+@* kullanıcılara seçtikleri kriterlere göre önerilen aktiviteleri gösterecek bir görünüm sağlamak. *@
